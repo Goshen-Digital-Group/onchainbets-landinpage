@@ -25,6 +25,8 @@ export const metadata: Metadata = {
     icon: "/onchainbet-small-colored-01.svg", // ✅ SVG favicon is supported!
   },
 
+
+
   // Open Graph (Social media preview)
   openGraph: {
     title: "OnChain Bets - Decentralized Betting on Solana",
@@ -55,8 +57,13 @@ export const metadata: Metadata = {
   },
 
   // Theme color for mobile
-  themeColor: "#000000",
+  // themeColor: "#000000",
 }
+
+export const viewport = {
+  themeColor: "#ffffff", // ADD this line
+  // ...other viewport settings if needed...
+};
 
 export default function RootLayout({
   children,
