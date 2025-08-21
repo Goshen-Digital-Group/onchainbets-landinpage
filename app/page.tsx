@@ -33,6 +33,8 @@ import OnChainBetsLogo from '@/components/OnChainBetsLogo';
 export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [copied, setCopied] = useState(false);
+  const [width, setWidth] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(1200); // default fallback
   const heroRef = useRef<HTMLDivElement>(null);
 
   const cryptoAddress = "000000000000000000000000000000000";
@@ -52,6 +54,10 @@ export default function HomePage() {
     if (typeof window !== "undefined") {
       // Smooth scroll animations and parallax effects
     }
+
+    // This code only runs in the browser
+    setWidth(window.innerWidth);
+    setWindowWidth(window.innerWidth);
   }, []);
 
   return (
@@ -167,14 +173,10 @@ export default function HomePage() {
                 <motion.div
                   key={i}
                   className="absolute w-12 h-12 bg-gradient-to-br from-emerald-500/20 to-green-500/20 rounded-lg backdrop-blur-sm border border-emerald-500/30"
-                  initial={{ y: "100vh", x: Math.random() * window.innerWidth }}
+                  initial={{ y: "100vh", x: Math.random() * windowWidth }}
                   animate={{
                     y: "-100px",
-                    x:
-                      Math.random() *
-                      (typeof window !== "undefined"
-                        ? window.innerWidth
-                        : 1200),
+                    x: Math.random() * windowWidth,
                   }}
                   transition={{
                     duration: 8 + Math.random() * 4,
@@ -246,7 +248,7 @@ export default function HomePage() {
                   <div className="flex items-center justify-center px-10 mb-4">
                 
                     <h3 className="text-lg font-bold text-white">
-                   <OnChainBetsLogo/>     Official Onchainbets Address  <OnChainBetsLogo/>
+                   <OnChainBetsLogo/>     Official OnChainBets Address  <OnChainBetsLogo/>
                     </h3>
                   </div>
                 <div className="bg-green-800 rounded-lg p-2 mb-4 border border-green-700 w-96 mx-auto">
@@ -275,7 +277,7 @@ export default function HomePage() {
                     </Button>
                   </div>
                   <p className="text-xs text-gray-100 mt-3">
-                    ⚠️ This is the official OnChainBet contract address. Always
+                    ⚠️ This is the official OnChainBets contract address. Always
                     verify before sending funds.
                   </p>
                 </div>
@@ -291,12 +293,14 @@ export default function HomePage() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button
+                <a href="https://play.onchainbets.fun" tabIndex={-1} target="_blank" rel="noopener noreferrer">
+                  <Button
                   size="lg"
                   className="bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white px-8 py-4 text-lg font-semibold shadow-lg"
-                >
-                 <OnChainBetsLogo/> Play Now  <OnChainBetsLogo/>
-                </Button>
+                  >
+                  <OnChainBetsLogo /> Play Now <OnChainBetsLogo />
+                  </Button>
+                </a>
               </motion.div>
             </motion.div>
 
@@ -321,7 +325,7 @@ export default function HomePage() {
       <Badge 
   className="bg-gradient-to-r from-emerald-900/50 to-green-900/50 text-emerald-300 border border-emerald-600/50 px-6 py-2 text-sm font-medium shadow-sm backdrop-blur-sm rounded-md mt-4 mx-auto block"
 >
-  Onchainbets Official Banner
+  OnChainBets Official Banner
 </Badge>
             </motion.div>
           </div>
@@ -859,7 +863,7 @@ export default function HomePage() {
 
             <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
               <p className="text-sm text-gray-400 mb-4 md:mb-0">
-                &copy; 2024 OnChainBet. All rights reserved.
+                &copy; 2025 OnChainBets. All rights reserved.
               </p>
               <div className="flex items-center space-x-6">
                 <a
