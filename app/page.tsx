@@ -332,7 +332,7 @@ export default function HomePage() {
           className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/50 backdrop-blur-sm relative overflow-hidden"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800"></div>
-          <div className="absolute inset-0 bg-[url('/images/onchainbet-banner-bg.png')] bg-cover bg-center opacity-60"></div>
+          <div className="absolute inset-0 bg-[url('/images/onchainbet-4.png')] bg-cover bg-center opacity-60"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_75%,rgba(16,185,129,0.1),transparent_50%)]"></div>
 
@@ -516,7 +516,7 @@ export default function HomePage() {
 
         <section
           id="how-to-play"
-          className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/60 backdrop-blur-sm relative overflow-hidden"
+          className="py-20 px-4 sm:px-6 lg:px-8 pt-20 bg-gray-800/60 backdrop-blur-sm relative overflow-hidden"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-black to-gray-900"></div>
           <div className="absolute inset-0 bg-[url('/images/onchainbet-1.png')] bg-cover bg-center opacity-40"></div>
