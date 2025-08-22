@@ -41,7 +41,7 @@ export default function DocsPage() {
   // Icons only for collapsed state
   const navItems = [
     { id: "introduction", label: "Introduction", icon: Book },
-    { id: "why-onchainbet", label: "Why OnChainBet?", icon: Shield },
+    { id: "why-onchainbet", label: "Why Onchainbets?", icon: Shield },
     { id: "how-to-play", label: "How to Play", icon: Zap },
     { id: "games", label: "Available Games", icon: Dice1 },
     { id: "provably-fair", label: "Provably Fair", icon: Lock },
@@ -56,7 +56,7 @@ export default function DocsPage() {
         className="fixed inset-0 opacity-5 bg-no-repeat bg-center bg-contain pointer-events-none"
         style={{
           backgroundImage: "url('/images/onchainbet-logo.png')",
-          backgroundSize: "40%",
+          backgroundSize: "80%",
         }}
       />
       <div className="fixed inset-0 bg-gradient-to-br from-emerald-900/10 via-black to-green-900/10 pointer-events-none" />
@@ -80,7 +80,7 @@ export default function DocsPage() {
                   className="rounded-lg"
                 />
                 <span className="text-xl font-bold bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent">
-                 Onchainbet
+                 Onchainbets
                 </span>
               </Link>
             </motion.div>
@@ -126,9 +126,11 @@ export default function DocsPage() {
             </div>
 
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white shadow-lg">
-                Launch App
-              </Button>
+               <a href="https://play.onchainbets.fun/" target="_blank" rel="noopener noreferrer">
+            <Button className="bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white px-6 shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all duration-300">
+              Launch App
+            </Button>
+          </a>
             </motion.div>
           </div>
         </div>
@@ -211,7 +213,7 @@ export default function DocsPage() {
         {/* Main Content */}
         <div className="flex-1 overflow-y-auto relative">
           <div
-            className="fixed inset-0 opacity-40 bg-no-repeat bg-center bg-cover pointer-events-none"
+            className="fixed inset-0 opacity-10 bg-no-repeat bg-center bg-cover pointer-events-none"
             style={{
               backgroundImage: "url('/images/onchainbet-banner.png')",
               backgroundAttachment: "fixed",
@@ -232,7 +234,7 @@ export default function DocsPage() {
                
                   <div>
                     <h1 className="text-4xl font-bold bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent m-0">
-                      OnChainBet Documentation
+                      Onchainbets Documentation
                     </h1>
                     <p className="text-xl text-gray-300 m-0">The Future of Decentralized Gaming</p>
                   </div>
@@ -260,12 +262,12 @@ export default function DocsPage() {
                 <h2 className="text-3xl font-bold text-white mb-6">Introduction</h2>
                 <div className="bg-gradient-to-r from-green-700/90 to-green-900/30 border border-green-600/50 rounded-lg p-6 mb-6 shadow-sm">
                   <p className="text-gray-300 leading-relaxed">
-                    OnChainBet is the world's first fully decentralized casino built on Solana. Every game, every bet,
+                   Onchainbets is the world's first fully decentralized casino built on Solana. Every game, every bet,
                     and every payout happens entirely on-chain with complete transparency and provable fairness.
                   </p>
                 </div>
                 <p className="text-gray-300 leading-relaxed mb-4">
-                  Unlike traditional online casinos that rely on centralized servers and hidden algorithms, OnChainBet
+                  Unlike traditional online casinos that rely on centralized servers and hidden algorithms, Onchainbets
                   operates through smart contracts where every outcome is verifiable and every transaction is public.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
@@ -275,7 +277,7 @@ export default function DocsPage() {
 
               {/* Why OnChainBet */}
               <section id="why-onchainbet" className="mb-12">
-                <h2 className="text-3xl font-bold text-white mb-6">Why OnChainBet?</h2>
+                <h2 className="text-3xl font-bold text-white mb-6">Why Onchainbets?</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <motion.div
                     whileHover={{ y: -5, scale: 1.02 }}
@@ -351,7 +353,7 @@ export default function DocsPage() {
               <section id="games" className="mb-12">
                 <h2 className="text-3xl font-bold text-white mb-6">Games</h2>
                 <p className="text-gray-300 leading-relaxed mb-6">
-                  OnChainBet offers 11 fully on-chain games, each designed for fairness, speed, and excitement.
+                 Onchainbets offers 11 fully on-chain games, each designed for fairness, speed, and excitement.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
                   {[
@@ -456,74 +458,82 @@ export default function DocsPage() {
               </section>
 
               {/* How to Play */}
-              <section id="how-to-play" className="mb-12">
-                <h2 className="text-3xl font-bold text-white mb-6">How to Play</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-6">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-8 h-8 bg-gradient-to-br from-emerald-900/50 to-green-900/50 rounded-full flex items-center justify-center flex-shrink-0 border border-emerald-600/50">
-                        <span className="text-sm font-bold text-emerald-400">1</span>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-white mb-2">Connect Your Wallet</h4>
-                        <p className="text-gray-300 text-sm mb-2">
-                          Click "Connect" in the top-right corner and choose your wallet:
-                        </p>
-                        <ul className="text-sm text-gray-300 space-y-1">
-                          <li>• Phantom</li>
-                          <li>• Backpack</li>
-                          <li>• Solflare</li>
-                          <li>• Ledger (via extension)</li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-4">
-                      <div className="w-8 h-8 bg-gradient-to-br from-emerald-900/50 to-green-900/50 rounded-full flex items-center justify-center flex-shrink-0 border border-emerald-600/50">
-                        <span className="text-sm font-bold text-emerald-400">2</span>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-white mb-2">Choose a Game</h4>
-                        <p className="text-gray-300 text-sm">
-                          Browse the game grid and click any title: Dice, Slots, Flip, HiLo, Mines, Roulette, Plinko,
-                          Crash, Blackjack, Jackpot, Plinko Race
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="space-y-6">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-8 h-8 bg-gradient-to-br from-emerald-900/50 to-green-900/50 rounded-full flex items-center justify-center flex-shrink-0 border border-emerald-600/50">
-                        <span className="text-sm font-bold text-emerald-400">3</span>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-white mb-2">Place a Bet</h4>
-                        <ul className="text-sm text-gray-300 space-y-1">
-                          <li>• Enter your bet amount</li>
-                          <li>• Set game parameters (e.g., dice range, crash auto-cashout)</li>
-                          <li>• Confirm with your wallet</li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-4">
-                      <div className="w-8 h-8 bg-gradient-to-br from-emerald-900/50 to-green-900/50 rounded-full flex items-center justify-center flex-shrink-0 border border-emerald-600/50">
-                        <span className="text-sm font-bold text-emerald-400">4</span>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-white mb-2">Watch & Win</h4>
-                        <ul className="text-sm text-gray-300 space-y-1">
-                          <li>• The result is computed instantly and settled on-chain</li>
-                          <li>• Winnings are automatically sent to your wallet</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="bg-yellow-900/30 border border-yellow-600/50 rounded-lg p-4 mt-6 shadow-sm">
-                  <p className="text-yellow-200 text-sm">
-                    💡 <strong>Tip:</strong> Use FAKE tokens in demo mode to practice risk-free.
-                  </p>
-                </div>
-              </section>
+            {/* How to Play */}
+<section id="how-to-play" className="mb-12">
+  <h2 className="text-3xl font-bold text-white mb-6">How to Play</h2>
+
+  {/* Match the Provably Fair card style: gradient + border + padding */}
+  <div className="bg-gradient-to-r from-emerald-900/30 to-green-900/30 border border-emerald-600/50 rounded-lg p-6 mb-6 shadow-sm">
+    <h4 className="font-semibold text-emerald-300 mb-4">How It Works</h4>
+
+    <div className="space-y-6">
+      <div className="flex items-start space-x-4">
+        <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 border border-emerald-600/50">
+          <span className="text-sm font-bold text-emerald-400">1</span>
+        </div>
+        <div>
+          <h4 className="font-semibold text-white mb-2">Connect Your Wallet</h4>
+          <p className="text-gray-300 text-sm mb-2">
+            Click "Connect" in the top-right corner and choose your wallet:
+          </p>
+          <ul className="text-sm text-gray-300 space-y-1">
+            <li>• Phantom</li>
+            <li>• Backpack</li>
+            <li>• Solflare</li>
+            <li>• Ledger (via extension)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="flex items-start space-x-4">
+        <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 border border-emerald-600/50">
+          <span className="text-sm font-bold text-emerald-400">2</span>
+        </div>
+        <div>
+          <h4 className="font-semibold text-white mb-2">Choose a Game</h4>
+          <p className="text-gray-300 text-sm">
+            Browse the game grid and click any title: Dice, Slots, Flip, HiLo, Mines, Roulette, Plinko,
+            Crash, Blackjack, Jackpot, Plinko Race.
+          </p>
+        </div>
+      </div>
+
+      <div className="flex items-start space-x-4">
+        <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 border border-emerald-600/50">
+          <span className="text-sm font-bold text-emerald-400">3</span>
+        </div>
+        <div>
+          <h4 className="font-semibold text-white mb-2">Place a Bet</h4>
+          <ul className="text-sm text-gray-300 space-y-1">
+            <li>• Enter your bet amount</li>
+            <li>• Set game parameters (e.g., dice range, crash auto-cashout)</li>
+            <li>• Confirm with your wallet</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="flex items-start space-x-4">
+        <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 border border-emerald-600/50">
+          <span className="text-sm font-bold text-emerald-400">4</span>
+        </div>
+        <div>
+          <h4 className="font-semibold text-white mb-2">Watch & Win</h4>
+          <ul className="text-sm text-gray-300 space-y-1">
+            <li>• The result is computed instantly and settled on-chain</li>
+            <li>• Winnings are automatically sent to your wallet</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Matched info box: use same style as provably fair, but with yellow for tip */}
+  <div className="bg-gradient-to-r from-yellow-900/30 to-yellow-800/20 border border-yellow-600/50 rounded-lg p-4 shadow-sm">
+    <p className="text-yellow-200 text-sm">
+      💡 <strong>Tip:</strong> Use FAKE tokens in demo mode to practice risk-free.
+    </p>
+  </div>
+</section>
 
               {/* Community */}
               <section id="community" className="mb-12">
@@ -613,12 +623,12 @@ export default function DocsPage() {
                         <div className="flex items-center justify-between">
                           <div className="flex items-center space-x-3">
                             <Users className="h-6 w-6 text-emerald-400" />
-                            <CardTitle className="text-lg text-white">Telegram</CardTitle>
+                            <CardTitle className="text-lg text-white">Community </CardTitle>
                           </div>
                           <Button
                             size="sm"
                             className="bg-green-600 hover:bg-green-700 text-white"
-                            onClick={() => window.open("https://t.me/onchainbet", "_blank")}
+                            onClick={() => window.open("https://x.com/i/communities/1959009958617334252", "_blank")}
                           >
                             Join
                           </Button>
@@ -632,70 +642,111 @@ export default function DocsPage() {
                 </div>
               </section>
 
-              {/* Roadmap */}
-              <section id="roadmap" className="mb-12">
-                <h2 className="text-3xl font-bold text-white mb-6">Roadmap</h2>
-                <div className="space-y-6">
-                  <div className="border-l-4 border-emerald-600/50 pl-6">
-                    <div className="flex items-center space-x-3 mb-2">
-                      <div className="w-3 h-3 bg-emerald-600 rounded-full"></div>
-                      <h4 className="font-semibold text-white">Q1 2025 - Platform Launch</h4>
-                    </div>
-                    <p className="text-gray-300 text-sm">
-                      Launch v1.0 with 11 fully on-chain games and provably fair system
-                    </p>
-                  </div>
-                  <div className="border-l-4 border-emerald-600/30 pl-6">
-                    <div className="flex items-center space-x-3 mb-2">
-                      <div className="w-3 h-3 bg-emerald-600/50 rounded-full"></div>
-                      <h4 className="font-semibold text-white">Q2 2025 - Token & Governance</h4>
-                    </div>
-                    <p className="text-gray-300 text-sm">
-                      Introduce $BETS token with staking rewards and community governance
-                    </p>
-                  </div>
-                  <div className="border-l-4 border-emerald-600/30 pl-6">
-                    <div className="flex items-center space-x-3 mb-2">
-                      <div className="w-3 h-3 bg-emerald-600/30 rounded-full"></div>
-                      <h4 className="font-semibold text-white">Q3 2025 - Security Audit</h4>
-                    </div>
-                    <p className="text-gray-300 text-sm">
-                      Complete third-party security audit by leading blockchain security firms
-                    </p>
-                  </div>
-                  <div className="border-l-4 border-emerald-600/30 pl-6">
-                    <div className="flex items-center space-x-3 mb-2">
-                      <div className="w-3 h-3 bg-emerald-600/30 rounded-full"></div>
-                      <h4 className="font-semibold text-white">Q4 2025 - Mobile App</h4>
-                    </div>
-                    <p className="text-gray-300 text-sm">Native mobile applications for iOS and Android platforms</p>
-                  </div>
-                  <div className="border-l-4 border-emerald-600/30 pl-6">
-                    <div className="flex items-center space-x-3 mb-2">
-                      <div className="w-3 h-3 bg-emerald-600/30 rounded-full"></div>
-                      <h4 className="font-semibold text-white">2026 - Multichain Expansion</h4>
-                    </div>
-                    <p className="text-gray-300 text-sm">
-                      Expand to Ethereum L2s, Sei, and other high-performance blockchains
-                    </p>
-                  </div>
-                </div>
-                <motion.div
-                  className="bg-gradient-to-r from-emerald-900/30 to-green-900/30 border border-emerald-600/50 rounded-lg p-6 text-center shadow-lg mt-8"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  <h3 className="text-xl font-bold text-emerald-300 mb-2">🏁 Ready to Play?</h3>
-                  <p className="text-emerald-200 mb-4">
-                    No sign-up. No KYC. Just connect your wallet and start winning.
-                  </p>
-                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <Button className="bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white shadow-lg">
-                      👉 Play Now at onchainbet.xyz <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </motion.div>
-                </motion.div>
-              </section>
+             {/* Roadmap */}
+    <section id="roadmap" className="mb-12 ">
+  <h2 className="text-3xl font-bold text-white mb-6">Roadmap</h2>
+
+<div className="bg-gradient-to-r from-emerald-900/30 to-green-900/30 
+                border border-emerald-600/50 
+                rounded-lg 
+                p-6
+                shadow-sm 
+                mt-8">
+
+
+  {/* Timeline Items */}
+  <div className="space-y-6 text-left"> {/* ← Left-aligned content */}
+    {/* Q1 2025 */}
+    <div className="border-l-4 border-emerald-600/50 pl-6">
+      <div className="flex items-center space-x-3 mb-2">
+        <div className="w-3 h-3 bg-emerald-600 rounded-full"></div>
+        <h4 className="font-semibold text-white">Q1 2025 - Platform Launch</h4>
+      </div>
+      <p className="text-gray-300 text-sm">
+        Launch v1.0 with 11 fully on-chain games and provably fair system.
+      </p>
+    </div>
+
+    {/* Q2 2025 */}
+    <div className="border-l-4 border-emerald-600/30 pl-6">
+      <div className="flex items-center space-x-3 mb-2">
+        <div className="w-3 h-3 bg-emerald-600/50 rounded-full"></div>
+        <h4 className="font-semibold text-white">Q2 2025 - Token & Governance</h4>
+      </div>
+      <p className="text-gray-300 text-sm">
+        Introduce $BETS token with staking rewards and community governance.
+      </p>
+    </div>
+
+    {/* Q3 2025 */}
+    <div className="border-l-4 border-emerald-600/30 pl-6">
+      <div className="flex items-center space-x-3 mb-2">
+        <div className="w-3 h-3 bg-emerald-600/30 rounded-full"></div>
+        <h4 className="font-semibold text-white">Q3 2025 - Security Audit</h4>
+      </div>
+      <p className="text-gray-300 text-sm">
+        Complete third-party security audit by leading blockchain security firms.
+      </p>
+    </div>
+
+    {/* Q4 2025 */}
+    <div className="border-l-4 border-emerald-600/30 pl-6">
+      <div className="flex items-center space-x-3 mb-2">
+        <div className="w-3 h-3 bg-emerald-600/30 rounded-full"></div>
+        <h4 className="font-semibold text-white">Q4 2025 - Mobile App</h4>
+      </div>
+      <p className="text-gray-300 text-sm">
+        Native mobile applications for iOS and Android platforms.
+      </p>
+    </div>
+
+    {/* 2026 */}
+    <div className="border-l-4 border-emerald-600/30 pl-6">
+      <div className="flex items-center space-x-3 mb-2">
+        <div className="w-3 h-3 bg-emerald-600/30 rounded-full"></div>
+        <h4 className="font-semibold text-white">2026 - Multichain Expansion</h4>
+      </div>
+      <p className="text-gray-300 text-sm">
+        Expand to Ethereum L2s, Sei, and other high-performance blockchains.
+      </p>
+    </div>
+  </div>
+</div>
+  {/* ✅ CTA Card – Now with EXACT same background & border as "Provably Fair" and "How to Play" */}
+  <motion.div
+    className="bg-gradient-to-r from-emerald-900/30 to-green-900/30 
+               border border-emerald-600/50 
+               rounded-lg 
+               p-6 
+               text-center 
+               shadow-sm 
+               mt-8"
+    whileHover={{ scale: 1.02 }}
+    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+  >
+    <h3 className="text-xl font-bold text-emerald-300 mb-2">🏁 Ready to Play?</h3>
+    <p className="text-emerald-200 mb-4">
+      No sign-up. No KYC. Just connect your wallet and start winning.
+    </p>
+
+    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+      <a
+        href="https://play.onchainbets.fun"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Button
+          size="lg"
+          className="bg-gradient-to-r from-emerald-600 to-green-600 
+                     hover:from-emerald-700 hover:to-green-700 
+                     text-white px-8 py-4 text-lg font-semibold shadow-lg"
+        >
+          Play Now
+        </Button>
+      </a>
+    </motion.div>
+  </motion.div>
+</section>
             </motion.div>
           </div>
         </div>
@@ -705,7 +756,7 @@ export default function DocsPage() {
       <footer className="border-t border-gray-800 bg-black/95 backdrop-blur-md flex-shrink-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
-            <p className="text-gray-400 text-sm">© 2025 OnChainBet. All rights reserved.</p>
+            <p className="text-gray-400 text-sm">© 2025 Onchainbets. All rights reserved.</p>
             <div className="flex space-x-4">
               <Link href="#" className="text-gray-400 hover:text-emerald-400 transition-colors">
                 <Twitter className="h-4 w-4" />
