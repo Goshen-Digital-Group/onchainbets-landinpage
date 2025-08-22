@@ -9,7 +9,7 @@ interface LoadingScreenProps {
 
 export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
   const [displayText, setDisplayText] = useState("")
-  const fullText = "ONCHAINBET"
+  const fullText = "ONCHAINBETS"
 
   useEffect(() => {
     let currentIndex = 0
