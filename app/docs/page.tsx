@@ -538,32 +538,8 @@ export default function DocsPage() {
               {/* Community */}
               <section id="community" className="mb-12">
                 <h2 className="text-3xl font-bold text-white mb-6">Community</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <motion.div
-                    whileHover={{ y: -5, scale: 1.02 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  >
-                    <Card className="border-green-600/30 bg-gradient-to-br from-green-800/90 to-green-900/90 backdrop-blur-sm shadow-lg hover:shadow-xl hover:border-emerald-500/50 transition-all duration-300 h-full">
-                      <CardHeader>
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center space-x-3">
-                            <MessageCircle className="h-6 w-6 text-green-400" />
-                            <CardTitle className="text-lg text-white">Discord</CardTitle>
-                          </div>
-                          <Button
-                            size="sm"
-                            className="bg-green-600 hover:bg-green-700 text-white"
-                            onClick={() => window.open("https://discord.gg/onchainbet", "_blank")}
-                          >
-                            Join
-                          </Button>
-                        </div>
-                        <CardDescription className="text-gray-300">
-                          Live support, community events, and exclusive giveaways
-                        </CardDescription>
-                      </CardHeader>
-                    </Card>
-                  </motion.div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              
                   <motion.div
                     whileHover={{ y: -5, scale: 1.02 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -603,7 +579,7 @@ export default function DocsPage() {
                           <Button
                             size="sm"
                             className="bg-green-600 hover:bg-green-700 text-white"
-                            onClick={() => window.open("https://github.com/onchainbet", "_blank")}
+                            onClick={() => window.open("https://github.com/Goshen-Digital-Group/onchainbets", "_blank")}
                           >
                             View
                           </Button>
