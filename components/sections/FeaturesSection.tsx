@@ -78,13 +78,6 @@ export default function FeaturesSection() {
       icon: Users,
       color: "#10B981", // Twitter blue
     },
-    {
-      href: "https://t.me/OnchainBetsFun",
-      ariaLabel: "Telegram",
-      tooltip: "Join Telegram",
-      icon: Send,
-      color: "#10B981", // Telegram blue
-    },
   ];
 
   return (
