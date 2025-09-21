@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react"; // 👈 Added useState
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
@@ -50,6 +50,19 @@ function ElegantShape({
 
 export default function OnchainBetsLoader({ onComplete }: { onComplete: () => void }) {
   const controls = useAnimation();
+  const [windowWidth, setWindowWidth] = useState(0); // 👈 Track window width
+
+  // 👇 Set window width after component mounts (client-only)
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setWindowWidth(window.innerWidth);
+
+      // Optional: update on resize
+      const handleResize = () => setWindowWidth(window.innerWidth);
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -65,6 +78,15 @@ export default function OnchainBetsLoader({ onComplete }: { onComplete: () => vo
     return () => clearTimeout(timer);
   }, [controls, onComplete]);
 
+  // 👇 Don't render shapes until we know the window width (avoid SSR crash)
+  if (typeof window === "undefined") {
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black">
+        <div className="text-green-100">Loading...</div>
+      </div>
+    );
+  }
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black overflow-hidden">
       {/* Background */}
@@ -74,29 +96,29 @@ export default function OnchainBetsLoader({ onComplete }: { onComplete: () => vo
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <ElegantShape
           delay={0.2}
-          width={window.innerWidth < 768 ? 300 : 600}
-          height={window.innerWidth < 768 ? 70 : 140}
+          width={windowWidth < 768 ? 300 : 600}
+          height={windowWidth < 768 ? 70 : 140}
           rotate={10}
           className="left-[-10%] top-[10%]"
         />
         <ElegantShape
           delay={0.4}
-          width={window.innerWidth < 768 ? 250 : 400}
-          height={window.innerWidth < 768 ? 60 : 100}
+          width={windowWidth < 768 ? 250 : 400}
+          height={windowWidth < 768 ? 60 : 100}
           rotate={-12}
           className="right-[-5%] top-[60%]"
         />
         <ElegantShape
           delay={0.3}
-          width={window.innerWidth < 768 ? 150 : 250}
-          height={window.innerWidth < 768 ? 40 : 70}
+          width={windowWidth < 768 ? 150 : 250}
+          height={windowWidth < 768 ? 40 : 70}
           rotate={8}
           className="left-[10%] bottom-[10%]"
         />
         <ElegantShape
           delay={0.5}
-          width={window.innerWidth < 768 ? 120 : 180}
-          height={window.innerWidth < 768 ? 30 : 50}
+          width={windowWidth < 768 ? 120 : 180}
+          height={windowWidth < 768 ? 30 : 50}
           rotate={-20}
           className="right-[15%] top-[5%]"
         />

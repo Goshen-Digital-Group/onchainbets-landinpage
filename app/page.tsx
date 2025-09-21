@@ -17,13 +17,19 @@ import Footer from "@/components/sections/Footer";
 
 export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
+  const [isClient, setIsClient] = useState(false); // 👈 NEW
 
   useEffect(() => {
+    setIsClient(true); // 👈 Only run on client
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 32000); // Show loader for 3 seconds
+    }, 32000); // Show loader for 32 seconds? (maybe typo? usually 3000 = 3s)
     return () => clearTimeout(timer);
   }, []);
+
+  if (!isClient) {
+    return null; // 👈 Don't render anything on server
+  }
 
   return (
     <>
