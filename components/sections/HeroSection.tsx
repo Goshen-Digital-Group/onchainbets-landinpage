@@ -93,88 +93,92 @@ export default function HeroSection() {
         </motion.p>
 
         <motion.div
-          className="mb-12 max-w-2xl mx-auto"
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.3 }}
+  className="mb-6 sm:mb-12 max-w-full sm:max-w-2xl mx-auto px-4"
+  initial={{ y: 50, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  transition={{ duration: 0.8, delay: 1.3 }}
+>
+  <div className="bg-green-900 backdrop-blur-sm border border-emerald-600/30 shadow-lg hover:shadow-xl hover:border-emerald-500/50 transition-all duration-300 p-4 sm:p-6 relative overflow-hidden rounded-xl">
+    <div className="absolute inset-0 bg-[url('/images/onchainbet-banner-bg.png')] bg-cover bg-center opacity-60"></div>
+    <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/10 to-green-900/10"></div>
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(16,185,129,0.1),transparent_70%)]"></div>
+    <div className="text-center relative z-10">
+      <h3 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4 flex flex-col sm:flex-row items-center justify-center gap-2">
+        <OnChainBetsLogo className="w-6 h-6 sm:w-auto sm:h-auto" />
+        Official Onchainbets Address
+        <OnChainBetsLogo className="w-6 h-6 sm:w-auto sm:h-auto" />
+      </h3>
+      <div className="bg-green-800 rounded-lg p-2 mb-4 border border-green-700 mx-auto w-full max-w-[90vw] sm:w-96">
+        <code className="text-emerald-400 text-xs sm:text-sm font-mono break-all leading-relaxed">
+          {cryptoAddress}
+        </code>
+      </div>
+      <div className="flex items-center justify-center space-x-3 sm:space-x-4 mt-3">
+        <Button
+          onClick={copyToClipboard}
+          variant="outline"
+          size="sm"
+          className="border-emerald-600/50 bg-green-950 text-emerald-400 hover:bg-emerald-600/90 text-xs sm:text-sm py-2 px-3 sm:py-2 sm:px-4"
         >
-          <div className="bg-green-900 backdrop-blur-sm border border-emerald-600/30 shadow-lg hover:shadow-xl hover:border-emerald-500/50 transition-all duration-300 p-6 relative overflow-hidden rounded-xl">
-            <div className="absolute inset-0 bg-[url('/images/onchainbet-banner-bg.png')] bg-cover bg-center opacity-60"></div>
-            <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/10 to-green-900/10"></div>
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(16,185,129,0.1),transparent_70%)]"></div>
-            <div className="text-center relative z-10">
-              <h3 className="text-lg font-bold text-white mb-4">
-                <OnChainBetsLogo /> Official Onchainbets Address <OnChainBetsLogo />
-              </h3>
-              <div className="bg-green-800 rounded-lg p-2 mb-4 border border-green-700 w-96 mx-auto">
-                <code className="text-emerald-400 text-sm font-mono break-all">
-                  {cryptoAddress}
-                </code>
-              </div>
-              <div className="flex items-center justify-center space-x-4">
-                <Button
-                  onClick={copyToClipboard}
-                  variant="outline"
-                  size="sm"
-                  className="border-emerald-600/50 bg-green-950 text-emerald-400 hover:bg-emerald-600/90"
-                >
-                  {copied ? (
-                    <>
-                      <CheckCircle className="h-4 w-4 mr-2" />
-                      Copied!
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="h-4 w-4 mr-2" />
-                      Copy Address
-                    </>
-                  )}
-                </Button>
-              </div>
-              <p className="text-xs text-gray-100 mt-3">
-                ⚠️ This is the official Onchainbets contract address. Always verify before sending funds.
-              </p>
-            </div>
-          </div>
-        </motion.div>
+          {copied ? (
+            <>
+              <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
+              <span className="hidden xs:inline">Copied!</span>
+              <span className="xs:hidden">✓</span>
+            </>
+          ) : (
+            <>
+              <Copy className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
+              <span>Copy Address</span>
+            </>
+          )}
+        </Button>
+      </div>
+      <p className="text-xs text-gray-100 mt-3 px-1">
+        ⚠️ This is the official Onchainbets contract address. Always verify before sending funds.
+      </p>
+    </div>
+  </div>
+</motion.div>
+
 
         <motion.div
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.5 }}
-        >
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <a href="https://play.onchainbets.fun" target="_blank" rel="noopener noreferrer">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white px-8 py-4 text-lg font-semibold shadow-lg"
-              >
-                <OnChainBetsLogo /> Play Now <OnChainBetsLogo />
-              </Button>
-            </a>
-          </motion.div>
-        </motion.div>
+  initial={{ y: 50, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  transition={{ duration: 0.8, delay: 1.5 }}
+>
+  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+    <a href="https://play.onchainbets.fun" target="_blank" rel="noopener noreferrer">
+      <Button
+        size="lg"
+        className="bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white px-8 py-4 text-lg font-semibold shadow-lg w-full sm:w-auto"
+      >
+        <OnChainBetsLogo className="w-5 h-5 mr-2" /> Play Now <OnChainBetsLogo className="w-5 h-5 ml-2" />
+      </Button>
+    </a>
+  </motion.div>
+</motion.div>
 
-        <motion.div
-          className="mt-16 relative"
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1.0, delay: 1.7 }}
-        >
-          <div className="w-full max-w-2xl mx-auto h-80 relative rounded-3xl overflow-hidden shadow-2xl border border-emerald-600/30">
-            <Image
-              src="/images/onchainbet-banner.png"
-              alt="OnChainBet Banner"
-              fill
-              className="object-cover"
-              style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)" }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/20 to-green-600/20 backdrop-blur-[1px]" />
-          </div>
-          <Badge className="bg-gradient-to-r from-emerald-900/50 to-green-900/50 text-emerald-300 border border-emerald-600/50 px-6 py-2 text-sm font-medium shadow-sm backdrop-blur-sm rounded-md mt-4 mx-auto block">
-            Onchainbets Official Banner
-          </Badge>
-        </motion.div>
+<motion.div
+  className="mt-12 sm:mt-16 relative px-4"
+  initial={{ y: 100, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  transition={{ duration: 1.0, delay: 1.7 }}
+>
+  <div className="w-full max-w-lg sm:max-w-2xl mx-auto h-64 sm:h-80 relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-emerald-600/30">
+    <Image
+      src="/images/onchainbet-banner.png"
+      alt="OnChainBet Banner"
+      fill
+      className="object-cover"
+      sizes="(max-width: 640px) 90vw, (max-width: 1024px) 80vw, 768px"
+    />
+    <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/20 to-green-600/20 backdrop-blur-[1px]" />
+  </div>
+  <Badge className="bg-gradient-to-r from-emerald-900/50 to-green-900/50 text-emerald-300 border border-emerald-600/50 px-4 sm:px-6 py-1.5 sm:py-2 text-xs sm:text-sm font-medium shadow-sm backdrop-blur-sm rounded-md mt-3 sm:mt-4 mx-auto block">
+    Onchainbets Official Banner
+  </Badge>
+</motion.div>
       </div>
     </section>
   );
